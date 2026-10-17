@@ -1,0 +1,14 @@
+{
+ "file": "verify_tlog.py",
+ "mirrors_planned": [
+  "https://legion33shadow.github.io/legion-tlog-mirror/verify_tlog.py",
+  "https://huggingface.co/datasets/gemmozero/phoenix-objects/resolve/main/verifier/verify_tlog.py"
+ ],
+ "note": "UA neutre mcp-tlog-verifier/1.0 depuis le 2026-10-17",
+ "prepared_at": "2026-10-17T09:21:10Z",
+ "schema": "legion-verifier-release/1",
+ "sha256": "23728659f028fcdf97dcf81c66cd652a2d8d1bb3ed5eee44af1fac814e3b2667",
+ "size": 57161,
+ "source_url": "https://legion-api.com/tlog/verify_tlog.py",
+ "test_vectors": "legion-tlog-test-vectors/1 : 336/336"
+}
