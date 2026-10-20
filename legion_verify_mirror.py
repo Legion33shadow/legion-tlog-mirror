@@ -38,6 +38,8 @@ TILE = 256
 ORIGIN = "tlog.legion-api.com/mcp/v0"
 SCHEMA_COMMIT = "legion-mcp-tlog-key-commitment/0.1"
 LOG_NOTE_NAME = "legion-mcp-tlog"
+# Transition B (2026-10-20) : les notes portent aussi une ligne au nom = origine (C2SP) ; les deux noms sont acceptés, même clé.
+LOG_NOTE_NAMES = (LOG_NOTE_NAME, "tlog.legion-api.com/mcp/v0")
 PURPOSE = "mcp-tlog"
 SIG_FIELDS = ("hash", "self_sig", "endorsement_sig")
 
@@ -457,7 +459,7 @@ def note_signer(note, keys, pub_for):
         raw = b64(sb)
         for pin in keys:
             pub = pub_for(pin, PURPOSE, tree_size=size)
-            if pub and name == LOG_NOTE_NAME and raw[:4] == note_key_id(name, pub) and ed_verify(pub, raw[4:], body.encode()):
+            if pub and name in LOG_NOTE_NAMES and raw[:4] == note_key_id(name, pub) and ed_verify(pub, raw[4:], body.encode()):
                 return pin
     return None
 

@@ -34,6 +34,8 @@ import urllib.request
 
 TILE = 256
 LOG_NOTE_NAME = "legion-mcp-tlog"
+# Transition B (2026-10-20) : les notes portent aussi une ligne au nom = origine (C2SP) ; les deux noms sont acceptés, même clé.
+LOG_NOTE_NAMES = (LOG_NOTE_NAME, "tlog.legion-api.com/mcp/v0")
 PURPOSE = "mcp-tlog"
 SIG_FIELDS = ("hash", "self_sig", "endorsement_sig")
 
@@ -314,7 +316,7 @@ def resurrect(mirror, root_pin, out, bitcoin_node=False, log=print):
         raw = b64(sb)
         for pin, e in keys.items():
             pub = pub_for(pin, PURPOSE, tree_size=size)
-            if pub and name == LOG_NOTE_NAME and raw[:4] == note_key_id(name, pub) and ed_verify(pub, raw[4:], body.encode()):
+            if pub and name in LOG_NOTE_NAMES and raw[:4] == note_key_id(name, pub) and ed_verify(pub, raw[4:], body.encode()):
                 signed_by = pin
     if not signed_by:
         raise Fail("checkpoint : aucune signature valide d'une clé mcp-tlog du trousseau")
