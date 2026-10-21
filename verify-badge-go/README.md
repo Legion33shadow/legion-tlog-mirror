@@ -13,11 +13,12 @@ Independent re-check of a LEGION MCP log record ("matches recorded leaf N"), wri
 ## Build
 
 ```sh
-go build -trimpath -o verify-badge-go .
+go build -trimpath -buildvcs=false -o verify-badge-go .
 ```
 
 Built with Go 1.27.3 (linux/amd64), `x/mod v0.40.0`, `gowebpki/jcs v1.0.2` (pinned in `go.sum`).
-With that toolchain the binary's SHA-256 starts with `387c2ee16b618385`.
+With that toolchain and `-buildvcs=false` the binary's SHA-256 starts with `387c2ee16b618385`.
+Without `-buildvcs=false`, a build inside a git clone embeds the commit and gives another hash.
 
 ## Use
 
