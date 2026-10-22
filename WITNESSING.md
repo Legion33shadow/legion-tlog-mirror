@@ -76,6 +76,11 @@ Expected output: `OK tlog.legion-api.com/mcp/v0 tree_size <n> root <base64>`. A 
   - rollback (409);
   - a modified body (403);
   - an unknown origin (404).
+- Live head, 2026-10-22: the push client read the live checkpoint (tree size 32975, root
+  `FVI6bs2DJBmxB/gY6khy8OV2SX54HEiCxAsABvszxGQ=`) and the live consistency proof 32091 → 32975 (17 hashes) from
+  `tlog.legion-api.com`. It pushed them to both implementations above, run on 127.0.0.1 with throwaway keys. Each one
+  returned a cosignature/v1 that a second tool verified, and each one refused a rollback to 32091 (409). The result
+  was 8/8.
 - None of this is an independent witness of the live log. It shows only that the format and protocol interoperate.
 
 ## To start witnessing
