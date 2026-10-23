@@ -1,0 +1,1 @@
+{"canonicalization":"RFC 8785 (JCS)","hash":"SHA-256 RFC 6962 (feuille 0x00, noeud 0x01)","issuer_pin_sha256":"cf9d6db5abbcc13e3a2ae2c25cece35b77f3a330aacfa7194bbfa8a03d2935fd","root_sha256":"319228a7befca32a7c81fbe6664444c295a1732d3202bf4a9652a321d821f888","schema":"legion-mcp-tlog-sth/0.1","timestamp":"2026-10-11T10:04:59Z","tree_size":17686}

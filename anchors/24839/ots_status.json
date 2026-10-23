@@ -1,0 +1,24 @@
+{
+ "status": "pending",
+ "label": "ancrage pending",
+ "state": "complete_proof_file",
+ "checked_at": "2026-10-23T00:43:00Z",
+ "ots_verify": "not_run_no_bitcoin_node",
+ "ots_verify_output": "Could not connect to Bitcoin node: Cookie file unusable ([Errno 2] No such file or directory: '/home/legion33/.bitcoin/.cookie') and rpcpassword not specified in the configuration file: '/home/legion33/.bitcoin/bitcoin.conf'",
+ "explorers_crosscheck": {
+  "agree": true,
+  "check_ots": "verified",
+  "note": "indicatif seulement, ne scelle pas"
+ },
+ "verify_command": "ots upgrade head.canon.json.ots && ots verify -f head.canon.json head.canon.json.ots   # nécessite un nœud Bitcoin Core",
+ "bitcoin_attested_block": 971701,
+ "attested_block_time": "2026-10-16T11:12:49Z",
+ "header_verify": {
+  "checked_at": "2026-10-23T08:46:51Z",
+  "headers_tip": 972743,
+  "min_confirmations": 6,
+  "method": "btc-headers-pow (sans nœud complet)",
+  "result": "not_run",
+  "detail": "synchro non confirmée par plusieurs pairs"
+ }
+}
